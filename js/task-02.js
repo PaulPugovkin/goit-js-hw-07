@@ -17,7 +17,6 @@ const createList = (arr, list) => {
   arr.forEach(el => {
     const listEl = document.createElement('li')
     listEl.innerText = el;
-    console.log(listEl);
     list.appendChild(listEl);
   })
 }
