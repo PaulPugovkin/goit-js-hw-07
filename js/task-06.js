@@ -9,14 +9,15 @@
 // если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
 
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
+const validateValueEl = document.querySelector('#validation-input')
 
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
+validateValueEl.addEventListener('input', () => {
+    if (validateValueEl.value.length >= 6) {
+        validateValueEl.classList.add('valid')
+        validateValueEl.classList.remove('invalid')
+    } else {
+        validateValueEl.classList.remove('valid')
+        validateValueEl.classList.add('invalid')
+    }
+})

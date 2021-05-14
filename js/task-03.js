@@ -12,6 +12,16 @@
 // Добавь минимальное оформление галереи
 // флексбоксами или гридами через css - классы.
 
+const createImages = (arr, list) => {
+  arr.forEach(elem => {
+    const listEl = document.createElement('li')
+    const image = document.createElement('img')
+    image.src = elem.url;
+    image.alt = elem.alt;
+    listEl.appendChild(image);
+    list.appendChild(listEl)
+})
+}
 
 const images = [
   {
@@ -30,3 +40,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryList = document.querySelector('#gallery')
+
+createImages(images, galleryList)

@@ -12,3 +12,16 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
+
+const createList = (arr, list) => {
+  arr.forEach(el => {
+    const listEl = document.createElement('li')
+    listEl.innerText = el;
+    console.log(listEl);
+    list.appendChild(listEl);
+  })
+}
+
+const ingredientsList = document.querySelector('#ingredients')
+
+createList(ingredients, ingredientsList)
