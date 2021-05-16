@@ -12,16 +12,16 @@
 // Добавь минимальное оформление галереи
 // флексбоксами или гридами через css - классы.
 
-const createImages = (arr, list) => {
-  arr.forEach(elem => {
-    const listEl = document.createElement('li')
-    const image = document.createElement('img')
-    image.src = elem.url;
-    image.alt = elem.alt;
-    listEl.appendChild(image);
-    list.appendChild(listEl)
-})
-}
+// const createImages = (arr, list) => {
+//   arr.forEach(elem => {
+//     const listEl = document.createElement('li')
+//     const image = document.createElement('img')
+//     image.src = elem.url;
+//     image.alt = elem.alt;
+//     listEl.appendChild(image);
+//     list.appendChild(listEl)
+// })
+// }
 
 const images = [
   {
@@ -41,6 +41,18 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('#gallery')
+const listEl = document.querySelector('#gallery')
 
-createImages(images, galleryList)
+const listImageExample = ({ url, alt }) => `
+  <li>
+<img src= ${url} alt=${alt}>
+  </li>
+  `
+
+const makeImages = images.map(listImageExample).join('')
+
+listEl.insertAdjacentHTML('afterbegin', makeImages)
+
+// const galleryList = document.querySelector('#gallery')
+
+// createImages(images, galleryList)

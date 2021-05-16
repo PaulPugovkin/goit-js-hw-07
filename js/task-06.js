@@ -11,9 +11,9 @@
 
 
 const validateValueEl = document.querySelector('#validation-input')
-
-validateValueEl.addEventListener('input', () => {
-    if (validateValueEl.value.length >= 6) {
+const valueEqualTo = Number(validateValueEl.dataset.length)
+validateValueEl.addEventListener('blur', () => {
+    if (validateValueEl.value.length === valueEqualTo) {
         validateValueEl.classList.add('valid')
         validateValueEl.classList.remove('invalid')
     } else {

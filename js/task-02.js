@@ -14,11 +14,13 @@ const ingredients = [
 ];
 
 const createList = (arr, list) => {
+  const addList = [];
   arr.forEach(el => {
     const listEl = document.createElement('li')
     listEl.innerText = el;
-    list.appendChild(listEl);
+    addList.push(listEl);
   })
+  return list.append(...addList);
 }
 
 const ingredientsList = document.querySelector('#ingredients')
